@@ -13,7 +13,7 @@ public class LoginDemo {
 	
 public static WebDriver driver;
 	
-	@Test
+	@Test(enabled=false)
 	
 	public static void ChromeBrowserDemo() throws InterruptedException {
 		
@@ -35,6 +35,33 @@ public static WebDriver driver;
         executor.executeScript("arguments[0].click();", element);
 
         driver.quit();
+	}
+	
+	@Test(enabled=true)
+	
+	public static void LoginMatri() throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.tamilmatrimony.com");
+        Thread.sleep(3000);
+        driver.findElement(By.id("open_loginpp")).click();
+        Thread.sleep(3000);
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("document.getElementById('ID').value='username';");
+        Thread.sleep(3000);
+		jsExecutor.executeScript("document.getElementsByName('TEMPPASSWD1')[0].value='password';");
+        Thread.sleep(3000);
+        WebElement element = driver.findElement(By.xpath("//input[@value='LOGIN']"));
+        jsExecutor.executeScript("arguments[0].click();", element);
+        driver.quit();
+
+   
+
+
+        
+		
+		
 	}
 
 }

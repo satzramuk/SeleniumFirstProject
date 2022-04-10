@@ -1,7 +1,5 @@
 package com.selenium.Learning;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AlertDemo {
-
+		
 	public static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException {
